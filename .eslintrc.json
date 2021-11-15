@@ -44,7 +44,8 @@
         "functions": "never",
         "objects": "always-multiline",
         "arrays": "always-multiline",
-        "enums": "always-multiline"
+        "enums": "always-multiline",
+        "imports": "always-multiline"
       }
     ],
     "import/no-extraneous-dependencies": [
