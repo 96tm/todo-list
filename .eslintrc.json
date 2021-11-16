@@ -1,0 +1,58 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect" // React version. "detect" automatically picks the version you have installed.
+    }
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "airbnb-typescript"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"] // Specify it only for TypeScript files
+      }
+    }
+  ],
+  "plugins": ["react", "@typescript-eslint", "import"],
+  "rules": {
+    "no-use-before-define": "off",
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      {
+        "functions": "never",
+        "objects": "always-multiline",
+        "arrays": "always-multiline",
+        "enums": "always-multiline",
+        "imports": "always-multiline"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ]
+  }
+}
